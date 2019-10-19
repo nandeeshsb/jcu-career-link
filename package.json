@@ -1,0 +1,54 @@
+{
+  "name": "jcu-career-link",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/js/app.js",
+  "scripts": {
+    "autoprefixer": "postcss -u autoprefixer -r dist/css/*",
+    "imagemin": "imagemin src/images/* --out-dir=dist/images",
+    "lint": "eslint src/js",
+    "sass": "node-sass --output-style compressed -o dist/css src/sass",
+    "serve": "browser-sync start --server \"dist\" --files .",
+    "uglify": "mkdir -p dist/js && uglifyjs src/js/*.js -m -o dist/js/app.js && uglifyjs src/js/*.js -m -c -o dist/js/app.min.js",
+    "build:css": "npm run sass && npm run autoprefixer",
+    "build:js": "npm run lint && npm run uglify",
+    "build:all": "npm run build:css && npm run build:js && npm run imagemin",
+    "watch:css": "onchange 'src/sass/*.scss' -- npm run build:css",
+    "watch:js": "onchange 'src/js/*.js' -- npm run build:js",
+    "watch:all": "concurrently \"npm run serve\" \"npm run watch:css\" \"npm run watch:js\"",
+    "postinstall": "npm run build:all && npm run watch:all"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bao-tran/jcu-career-link.git"
+  },
+  "keywords": [],
+  "author": "Bao Tran",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bao-tran/jcu-career-link/issues"
+  },
+  "homepage": "https://github.com/bao-tran/jcu-career-link#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.6.5",
+    "browser-sync": "^2.26.7",
+    "concurrently": "^5.0.0",
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-prettier": "^3.1.1",
+    "imagemin-cli": "^5.0.0",
+    "node-sass": "^4.12.0",
+    "onchange": "^6.1.0",
+    "postcss-cli": "^6.1.3",
+    "prettier": "^1.18.2",
+    "uglify-es": "^3.3.9"
+  },
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "firebase": "^7.2.1",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.16.0"
+  }
+}
