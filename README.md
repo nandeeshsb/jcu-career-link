@@ -1,22 +1,36 @@
 # JCU Career Link
 
-## Node Package Manager
+## Geting Started
 
-This project uses [npm](https://npmjs.org) to manage core dependencies. npm can be installed in Windows along with [Node.js](https://nodejs.org).
+### Windows Development (preferred)
 
-To get started in project development, run `npm i` to install all required node modules. After all modules are installed, the project will build itself and be served on http://localhost:3000.
+Install npm via [Node.js](https://nodejs.org).
 
-## Git for Windows
+**Note:** Confirm npm is installed by running `command -v npm`
 
-To avoid any npm runtime errors, set the default script shell to bash:
+[Git BASH](https://gitforwindows.org) (Git for Windows)
+
+**Note:** To avoid any npm runtime errors, set the default script shell to bash:
 
 ```$ npm config set script-shell "C:\\Program Files\\git\\bin\\bash.exe"```
+
+Initialize the project by running:
+
+```npm i```
+
+If you are getting any npm errors, `npm cache clean --force` then `npm i` can help.
+
+**Note**: Build images using `npm run imagemin`
+
+On postinstall, a browser should open to http://localhost:3000. If not, run `npm run watch:all`.
 
 ## Dependencies
 
 ### Core
 
 * Bootstrap
+  * jQuery
+  * Popper.js
 * Firebase
 
 ### Development
