@@ -1,5 +1,6 @@
 .firebase/
 node_modules/
+dist/
 dist/css/*
 dist/images/*
 dist/js/*
