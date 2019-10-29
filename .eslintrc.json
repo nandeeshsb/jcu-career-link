@@ -4,7 +4,10 @@
   "rules": {
     "prettier/prettier": "error",
     "no-alert": "off",
-    "no-console": "off"
+    "no-console": "off",
+    "no-undef": "warn",
+    "import/no-extraneous-dependencies": "off",
+    "global-require": "off"
   },
   "env": {
     "browser": true
